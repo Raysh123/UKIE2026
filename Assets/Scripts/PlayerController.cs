@@ -76,4 +76,9 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         isMoving = false;
     }
+
+    public void Deactivate()
+    {
+        gameObject.SetActive(false);
+    }
 }

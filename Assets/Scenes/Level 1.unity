@@ -1021,7 +1021,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1066895781}
-  audioSource: {fileID: 1104123998}
   sceneController: {fileID: 0}
 --- !u!114 &625098641
 MonoBehaviour:
@@ -1037,6 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1645689364}
   gameOverActive: 0
+  audioSource: {fileID: 1104123998}
 --- !u!114 &625098642
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -83,5 +84,7 @@ public class PlayerController : MonoBehaviour
         gameObject.SetActive(false);
         sceneController.gameOverUI.SetActive(true);
         sceneController.gameOverActive = true;
+        Time.timeScale = 0f;
+        sceneController.audioSource.Stop();
     }
 }

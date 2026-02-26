@@ -7,6 +7,8 @@ public class SceneController : MonoBehaviour
 
     public GameObject gameOverUI;
     public bool gameOverActive;
+    public AudioSource audioSource;
+
     public static void LoadScene(int sceneIndex)
    {
        SceneManager.LoadScene(sceneIndex);

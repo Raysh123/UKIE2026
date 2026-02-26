@@ -1,0 +1,15 @@
+using UnityEngine;
+
+public class ItemPickUp : MonoBehaviour
+{
+    public bool shieldActive = false; 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            gameObject.SetActive(false);
+            shieldActive = true;
+        }
+    }
+}

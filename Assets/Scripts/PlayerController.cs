@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private BPM bpm;
     private bool leftBlocked = false;
     private bool rightBlocked = false;
+    public SceneController sceneController;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -80,5 +81,7 @@ public class PlayerController : MonoBehaviour
     public void Deactivate()
     {
         gameObject.SetActive(false);
+        sceneController.gameOverUI.SetActive(true);
+        sceneController.gameOverActive = true;
     }
 }

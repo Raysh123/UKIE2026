@@ -9,6 +9,16 @@ public class SpiritMovement : MonoBehaviour
     private bool leftBlocked = false;
     private bool rightBlocked = false;
 
+    public Health health;
+    public ItemPickUp item;
+    
+    public SceneController sceneController;
+
+    private void Start()
+    {
+        Health health = gameObject.GetComponent<Health>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("LeftBlock"))
@@ -75,5 +85,17 @@ public class SpiritMovement : MonoBehaviour
         transform.position += new Vector3(1, 0, 0);
         yield return new WaitForSeconds(.25f);
         isMoving = false;
+    }
+
+    public void ActivateShield()
+    {
+        health.maxHealth = 2;
+    }
+
+    public void Deactivate()
+    {
+        gameObject.SetActive(false);
+        sceneController.gameOverUI.SetActive(true);
+        sceneController.gameOverActive = true;
     }
 }

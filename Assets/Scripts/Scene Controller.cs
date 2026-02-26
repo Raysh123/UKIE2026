@@ -4,14 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+
+    public GameObject gameOverUI;
+    public bool gameOverActive;
     public static void LoadScene(int sceneIndex)
    {
        SceneManager.LoadScene(sceneIndex);
    }
 
-    public static void Restart()
+    public void Restart()
     {
         LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverUI.SetActive(false);
+        gameOverActive = false;
     }
 
     public static void NextLevel()

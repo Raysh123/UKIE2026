@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public AudioSource audioSource;
+    public SceneController sceneController;
 
     private void Update()
     {
@@ -15,7 +16,7 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
-            } else
+            } else if (!sceneController.gameOverActive)
             {
                 Pause();
             }

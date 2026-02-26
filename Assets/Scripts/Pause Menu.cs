@@ -6,16 +6,22 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    public SceneController sceneController;
+    private SceneController sceneController;
+
+    private void Start()
+    {
+        sceneController = GetComponent<SceneController>();
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !sceneController.gameOverActive)
         {
             if (GameIsPaused)
             {
                 Resume();
-            } else if (!sceneController.gameOverActive)
+            }
+            else
             {
                 Pause();
             }

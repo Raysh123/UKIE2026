@@ -9,6 +9,11 @@ public class SceneController : MonoBehaviour
     public bool gameOverActive;
     public AudioSource audioSource;
 
+    private void Start()
+    {
+        gameOverActive = false;
+    }
+
     public static void LoadScene(int sceneIndex)
    {
        SceneManager.LoadScene(sceneIndex);

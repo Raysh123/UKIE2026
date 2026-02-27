@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private bool leftBlocked = false;
     private bool rightBlocked = false;
     public SceneController sceneController;
+    private AudioSource movementSFX;
+    public AudioSource playerPickUpSFX;  
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

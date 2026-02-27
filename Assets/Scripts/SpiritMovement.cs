@@ -47,10 +47,6 @@ public class SpiritMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(shieldActive)
-        {
-            ActivateShield();
-        }
         Move();
     }
 
@@ -93,10 +89,6 @@ public class SpiritMovement : MonoBehaviour
         isMoving = false;
     }
 
-    public void ActivateShield()
-    {
-        health.maxHealth = 2;
-    }
 
     public void Deactivate()
     {

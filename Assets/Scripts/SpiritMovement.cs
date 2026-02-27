@@ -4,6 +4,7 @@ using UnityEngine.Audio;
 
 public class SpiritMovement : MonoBehaviour
 {
+    public bool shieldActive = false;
     private bool isMoving;
     [SerializeField]
     private BPM bpm;
@@ -46,6 +47,10 @@ public class SpiritMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(shieldActive)
+        {
+            ActivateShield();
+        }
         Move();
     }
 

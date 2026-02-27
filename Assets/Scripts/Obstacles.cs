@@ -3,8 +3,14 @@ using UnityEngine;
 public class Obstacles : MonoBehaviour
 {
     public SpiritMovement spiritMovement;
+    public SceneController sceneController;
     public Health health;
     public int damage = 1;
+
+    private void Start()
+    {
+        sceneController = FindAnyObjectByType<SceneController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,7 +27,10 @@ public class Obstacles : MonoBehaviour
                 else
                 {
                     health.TakeDamage(damage); 
-                    Destroy(gameObject);
+                    Destroy(collision.gameObject);
+                    sceneController.gameOverUI.SetActive(true);
+                    sceneController.gameOverActive = true;
+                    sceneController.audioSource.Stop();
                 }
             }
         }

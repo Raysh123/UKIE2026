@@ -90,12 +90,12 @@ public class SpiritMovement : MonoBehaviour
     }
 
 
-    public void Deactivate()
-    {
-        gameObject.SetActive(false);
-        sceneController.gameOverUI.SetActive(true);
-        sceneController.gameOverActive = true;
-        Time.timeScale = 0f;
-        sceneController.audioSource.Stop();
-    }
+    //public void Deactivate()
+    //{
+    ////    sceneController.gameOverActive = true;
+    ////    sceneController.gameOverUI.SetActive(true);
+    ////    sceneController.audioSource.Stop();
+    ////    gameObject.SetActive(false);
+    ////    Time.timeScale = 0f;
+    ////}
 }
